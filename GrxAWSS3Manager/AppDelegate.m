@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GrxAWSS3Manager.h"
 @interface AppDelegate ()
 
 @end
@@ -15,7 +15,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    /** 初始化SDK */
+    [GrxAWSS3Manager.shared initAWSS3WithAccessKey:@"XXX" secretKey:@"XXX"];
+
     return YES;
 }
 

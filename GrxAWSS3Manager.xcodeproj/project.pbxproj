@@ -14,6 +14,8 @@
 		2153652E27CF466200B19649 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2153652D27CF466200B19649 /* Assets.xcassets */; };
 		2153653127CF466200B19649 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2153652F27CF466200B19649 /* LaunchScreen.storyboard */; };
 		2153653427CF466200B19649 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2153653327CF466200B19649 /* main.m */; };
+		2153653F27CF4ADF00B19649 /* GrxAWSS3Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2153653E27CF4ADF00B19649 /* GrxAWSS3Manager.m */; };
+		E3B264EBB1B6DAB9CDB4C599 /* libPods-GrxAWSS3Manager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C76AA9B47F30532C294897E0 /* libPods-GrxAWSS3Manager.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,11 @@
 		2153653027CF466200B19649 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2153653227CF466200B19649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2153653327CF466200B19649 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2153653D27CF4ADF00B19649 /* GrxAWSS3Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrxAWSS3Manager.h; sourceTree = "<group>"; };
+		2153653E27CF4ADF00B19649 /* GrxAWSS3Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrxAWSS3Manager.m; sourceTree = "<group>"; };
+		5CEF51E008C5B7CB474B5C76 /* Pods-GrxAWSS3Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrxAWSS3Manager.release.xcconfig"; path = "Target Support Files/Pods-GrxAWSS3Manager/Pods-GrxAWSS3Manager.release.xcconfig"; sourceTree = "<group>"; };
+		B153299097A0BA9A997CAF8C /* Pods-GrxAWSS3Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrxAWSS3Manager.debug.xcconfig"; path = "Target Support Files/Pods-GrxAWSS3Manager/Pods-GrxAWSS3Manager.debug.xcconfig"; sourceTree = "<group>"; };
+		C76AA9B47F30532C294897E0 /* libPods-GrxAWSS3Manager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GrxAWSS3Manager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B264EBB1B6DAB9CDB4C599 /* libPods-GrxAWSS3Manager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +55,8 @@
 			children = (
 				2153652027CF466100B19649 /* GrxAWSS3Manager */,
 				2153651F27CF466100B19649 /* Products */,
+				49F5CE8CD454387E87B26AE6 /* Pods */,
+				8999DEE60A4EBB088FA74293 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +71,8 @@
 		2153652027CF466100B19649 /* GrxAWSS3Manager */ = {
 			isa = PBXGroup;
 			children = (
+				2153653D27CF4ADF00B19649 /* GrxAWSS3Manager.h */,
+				2153653E27CF4ADF00B19649 /* GrxAWSS3Manager.m */,
 				2153652127CF466100B19649 /* AppDelegate.h */,
 				2153652227CF466100B19649 /* AppDelegate.m */,
 				2153652427CF466100B19649 /* SceneDelegate.h */,
@@ -76,6 +88,23 @@
 			path = GrxAWSS3Manager;
 			sourceTree = "<group>";
 		};
+		49F5CE8CD454387E87B26AE6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B153299097A0BA9A997CAF8C /* Pods-GrxAWSS3Manager.debug.xcconfig */,
+				5CEF51E008C5B7CB474B5C76 /* Pods-GrxAWSS3Manager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8999DEE60A4EBB088FA74293 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C76AA9B47F30532C294897E0 /* libPods-GrxAWSS3Manager.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +112,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2153653727CF466200B19649 /* Build configuration list for PBXNativeTarget "GrxAWSS3Manager" */;
 			buildPhases = (
+				BCA2E4BB7B2F1F8D48E4833D /* [CP] Check Pods Manifest.lock */,
 				2153651A27CF466100B19649 /* Sources */,
 				2153651B27CF466100B19649 /* Frameworks */,
 				2153651C27CF466100B19649 /* Resources */,
@@ -141,11 +171,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BCA2E4BB7B2F1F8D48E4833D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GrxAWSS3Manager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2153651A27CF466100B19649 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2153653F27CF4ADF00B19649 /* GrxAWSS3Manager.m in Sources */,
 				2153652927CF466100B19649 /* ViewController.m in Sources */,
 				2153652327CF466100B19649 /* AppDelegate.m in Sources */,
 				2153653427CF466200B19649 /* main.m in Sources */,
@@ -289,6 +345,7 @@
 		};
 		2153653827CF466200B19649 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B153299097A0BA9A997CAF8C /* Pods-GrxAWSS3Manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +372,7 @@
 		};
 		2153653927CF466200B19649 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CEF51E008C5B7CB474B5C76 /* Pods-GrxAWSS3Manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
