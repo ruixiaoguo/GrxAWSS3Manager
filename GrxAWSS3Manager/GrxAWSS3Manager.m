@@ -57,6 +57,28 @@
         return nil;
     }];
 }
+- (void)uploadFile:(NSString *)fileUrlStr
+    withServerPath:(NSString *)serverPath
+    withStartBlock:(AwsStartBlock)startBlock withProgressBlock:(AwsProgressBlock)progressblock withCompletionBlock:(AwssCompletionBlock)comBlock{
+    AWSS3TransferUtilityUploadCompletionHandlerBlock completionHandler = ^(AWSS3TransferUtilityUploadTask *task, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            comBlock(task,error);
+        });
+    };
+    AWSS3TransferUtilityUploadExpression *expression = [AWSS3TransferUtilityUploadExpression new];
+    expression.progressBlock = ^(AWSS3TransferUtilityTask *task, NSProgress *progress) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            progressblock(task,progress);
+        });
+    };
+    AWSS3TransferUtility *transferUtility = [AWSS3TransferUtility defaultS3TransferUtility];
+    [[transferUtility uploadFile:[NSURL URLWithString:fileUrlStr] bucket:S3BucketName key:serverPath contentType:@"text/plain" expression:expression completionHandler:completionHandler] continueWithBlock:^id(AWSTask *task) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            startBlock(task);
+        });
+        return nil;
+    }];
+}
 - (void)downloadDataStartBlock:(AwsStartBlock)startBlock withProgressBlock:(AwsProgressBlock)progressblock withCompletionBlock:(AwssDownCompletionBlock)comBlock{
     AWSS3TransferUtilityDownloadCompletionHandlerBlock completionHandler = ^(AWSS3TransferUtilityDownloadTask *task, NSURL *location, NSData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{

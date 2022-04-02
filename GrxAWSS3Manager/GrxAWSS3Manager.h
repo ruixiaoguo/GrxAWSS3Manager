@@ -24,6 +24,10 @@ typedef void (^AwsProgressBlock)(AWSS3TransferUtilityTask *task, NSProgress *pro
 - (void)initAWSS3WithAccessKey:(NSString *)accessKey secretKey:(NSString *)secretKey;
 /** 上传图片 */
 - (void)uploadData:(NSData *)imageData withStartBlock:(AwsStartBlock)startBlock withProgressBlock:(AwsProgressBlock)progressblock withCompletionBlock:(AwssCompletionBlock)comBlock;
+/** 上传文件 */
+- (void)uploadFile:(NSString *)fileUrlStr
+    withServerPath:(NSString *)serverPath
+    withStartBlock:(AwsStartBlock)startBlock withProgressBlock:(AwsProgressBlock)progressblock withCompletionBlock:(AwssCompletionBlock)comBlock;
 /** 下载文件 */
 - (void)downloadDataStartBlock:(AwsStartBlock)startBlock withProgressBlock:(AwsProgressBlock)progressblock withCompletionBlock:(AwssDownCompletionBlock)comBlock;
 @end
